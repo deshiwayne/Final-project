@@ -37,6 +37,8 @@ export default function WeatherApp() {
     }
   };
 
+// App ui code
+
   return (
     <ScrollView className={`flex-1 px-5 pt-12 ${isDark ? 'bg-zinc-900' : 'bg-gray-100'}`} contentContainerStyle={{ alignItems: 'center' }}>
       <Text className={`text-2xl font-bold mb-5 ${isDark ? 'text-white' : 'text-black'}`}>Weather App</Text>
@@ -53,7 +55,7 @@ export default function WeatherApp() {
         className="bg-blue-500 px-4 py-2 rounded-md"
         onPress={fetchWeather}
       >
-        <Text className="text-white font-semibold">Get Weather</Text>
+        <Text className="text-white font-semibold">Tap to see Weather</Text>
       </TouchableOpacity>
 
       {loading && <ActivityIndicator size="large" color="#3b82f6" className="mt-5" />}
@@ -69,7 +71,7 @@ export default function WeatherApp() {
             className="w-24 h-24"
           />
           <Text className={`text-5xl font-light ${isDark ? 'text-white' : 'text-black'}`}>{weather.current.temp_c}°C</Text>
-          <Text className={`${isDark ? 'text-white' : 'text-black'}`}>{weather.current.condition.text}</Text>
+          <Text className={`${isDark ? 'text-white' : 'text-black'} mt-5`}>{weather.current.condition.text}</Text>
 
           <View className="flex-row items-center mt-3">
             <Ionicons name="water" size={24} color="skyblue" />
